@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-game-canvas',
@@ -15,10 +15,6 @@ export class GameCanvasComponent implements OnInit {
     if(context) {
       this.defineCanvas(context);
     }
-  }
-
-  ngAfterViewInit(){
-
   }
 
   defineCanvas(context: CanvasRenderingContext2D){
