@@ -1,11 +1,14 @@
 import { GameObject } from "./game-object";
 
 export class Bullet extends GameObject {
+  newPositionY: number;
 
-    super(x: number, y: number, width: number, height: number) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
-      }
+  constructor(x: number, y: number, width: number, height: number, posY: number){
+    super(x, y, width, height);
+    this.newPositionY = posY;
+  }
+
+  override update(dx: number, dy: number){
+    this.y += this.newPositionY;
+  }
 }
