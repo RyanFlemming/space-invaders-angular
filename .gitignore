@@ -43,3 +43,5 @@ Thumbs.db
 .vscode/launch.json
 src/app/app.module.ts
 .vscode/launch.json
+src/app/app.module.ts
+package.json
