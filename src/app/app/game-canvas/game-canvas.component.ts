@@ -51,7 +51,7 @@ export class GameCanvasComponent implements OnInit {
 
     if(context) {
       this.defineCanvas(context);
-      /* for (var i = 0; i < this.noOfAsteroids; i++) {
+      for (var i = 0; i < this.noOfAsteroids; i++) {
       this.asteroids.push(new Asteroid(
         this.asteroidsSpace + i * this.asteroidsSpace,
         canvas.height - 180,
@@ -59,7 +59,7 @@ export class GameCanvasComponent implements OnInit {
         5,
         this.asteroidsParts
       ));
-    } */
+    }
       for (var i = 0; i < this.asteroids.length; i++) {
         this.asteroids[i].draw(context);
         console.log("Asteroids in array: " + this.asteroids.length);

@@ -13,8 +13,8 @@ export class GameObjectService {
   }
 
   getAsteroidParts(x: number, y: number, width: number, height: number, noParts: number) : GameObject[] {
-    for (var i = 0; i< noParts; i++){
-      for (var j = 0; i < noParts; j++) {
+    for (var i = 0; i < noParts; i++){
+      for (var j = 0; j < noParts; j++) {
         this.asteroids.push(new GameObject(
           x + i * width,
           y + j * height,

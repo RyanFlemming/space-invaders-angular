@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { GameCanvasComponent } from './app/game-canvas/game-canvas.component';
-import { SnowflakeComponent } from './app/snowflake/snowflake.component';
+
+export let AppInjector: Injector;
 
 @NgModule({
   declarations: [
     AppComponent,
     GameCanvasComponent,
-    SnowflakeComponent,
     
   ],
   imports: [
@@ -18,4 +18,9 @@ import { SnowflakeComponent } from './app/snowflake/snowflake.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  // Using AppInjecter in place of using constructor
+  constructor(private injector: Injector){
+    AppInjector = this.injector;
+  }
+}
