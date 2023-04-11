@@ -1,7 +1,9 @@
 <html lang="en">
   <body>
     <h1>Space Invaders</h1>
+    <h3>
+      <button (click)="start()" (click)="this.isButtonVisible = false" *ngIf="this.isButtonVisible">Start</button>
+    </h3>
     <canvas #canvas width="800" height="600" style="border:1px solid #000000;"></canvas>
-    <button (click)="doStuff()">Click me</button>
   </body>
 </html>
