@@ -2,7 +2,7 @@ import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { GameCanvasComponent } from './app/game-canvas/game-canvas.component';
+import { GameCanvasComponent } from './game-canvas/game-canvas.component';
 
 export let AppInjector: Injector;
 
