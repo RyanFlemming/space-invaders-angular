@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Player } from 'src/app/vehicle/player';
+import { Vehicle } from 'src/app/vehicle/vehicle';
 import { Asteroid } from '../asteroid';
 import { GameObject } from '../game-object';
 
@@ -6,8 +8,9 @@ import { GameObject } from '../game-object';
   providedIn: 'root'
 })
 export class GameObjectService {
+  private player!: Player;
   private asteroids: GameObject[] = [];
-  private asteroidField: Asteroid[] = [];
+  private enemies: Vehicle[] = [];
 
   constructor(){
   }
@@ -26,15 +29,23 @@ export class GameObjectService {
     return this.asteroids;
   }
 
-  generateAsteroidField(){
-    for (var i = 0; i < 8; i++) {
-      this.asteroidField.push(new Asteroid(
-        85 + i * 85,
-        600 - 180,
-        5,
-        5,
-        8
-      ));
+  generatePlayer(canvasWidth: number, canvasHeight: number, context: CanvasRenderingContext2D) {
+    this.player = new Player(canvasWidth / 2 - 50, canvasHeight - 50, 20, 20, canvasHeight, canvasWidth);
+    this.player.draw(context);
+  }
+
+  generateEnemies(enemyLines: number, enemiesEachLine: number, enemySpace: number, context: CanvasRenderingContext2D){
+    for (let i = 0; i < enemyLines; i++) {
+      for (let j = 0; j < enemiesEachLine; j++) {
+        this.enemies.push(new Vehicle(
+          enemySpace + j * enemySpace,
+          enemySpace + i * enemySpace,
+          20,
+          20,
+          0
+        ));
+        this.enemies[i].draw(context);
+      }
     }
   }
 }
