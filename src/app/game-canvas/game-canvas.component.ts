@@ -25,7 +25,7 @@ export class GameCanvasComponent implements OnInit {
 
     if(context) {
       this.defineCanvas(context);
-      this.gameBehavior.startGame(canvas.height, context)
+      this.gameBehavior.startGame(canvas.height, canvas.width, context)
     }
   }
 
